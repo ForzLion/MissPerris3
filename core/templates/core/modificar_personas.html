@@ -1,0 +1,93 @@
+{% extends "core/base.html" %}
+{% block contenido %}
+<form action=""  name="formulario" id="formulario" method="POST">
+    <h2>Modificar Persona</h2>
+
+
+      {% csrf_token %}
+    <input type="hidden" name="txtId" id="txtId" value="{{persona.id}}">
+       
+    <label for="txtRun">Run</label>
+    <input type="text" name="txtRun" id="txtRun" placeholder="Ingrese  Rut" onkeyup="formatCliente(this)" maxlength="12"  value="{{persona.rut}}">
+    <br>
+    <label for="txtCorreo"> Correo Electronico </label>
+    <input type="email" name="txtCorreo" id="txtCorreo" placeholder="Ingrese Email" value="{{persona.email}}">
+    <br>
+    <label for="txtNombre">Nombre Completo</label>
+    <input type="text" name="txtNombre" id="txtNombre" placeholder="Ingrese Nombre Completo "  onkeyup="this.value=letras(this.value)"  pattern="[A-Za-z]+" maxlength="100" value="{{persona.nombre}}">
+    <br>
+    <label for="txtFechaN">Fecha de Nacimiento</label>
+    <input type="date" name="txtFechaN" id="txtFechaN" value="{{persona.fechaNac}}">
+    <br>
+    <label for="">Telefono de Contacto</label>
+    <input type="text" name="txtTelefono" id="txtTelefono" placeholder="Ingrese  telefono de contacto" maxlength="9" min="0" onkeyup="this.value=Numeros(this.value)" pattern="^[0 - 9]+){9}$" value="{{persona.phone}}" >
+    <br>
+    <label for="cboRegion">Región</label>
+    <select name="cboRegion" id="cboRegion">
+      {%for r in regiones %}
+            <option value="0">Seleccione</option>
+            <option
+            {% if r.id == persona.region.id  %}
+            
+            {{'selected'}}
+            {% endif %}
+            value="{{r.id}}">{{r.nombre}}</option>
+      {% endfor %}
+
+    </select>
+    <br>
+    <label for="cboCiudad">Ciudad</label>
+    <select name="cboCiudad" id="cboCiudad">
+      {%for c in ciudades %}
+      <option value="0">Seleccione</option>
+      
+      
+        <option 
+            {% if c.id == persona.ciudad.id  %}
+        {{'selected'}}
+      
+      {% endif %}value="{{c.id}}">{{c.nombre}}</option>
+      {% endfor %}
+
+        
+    </select>
+    <br>
+    <label for="cboComuna">Comuna</label>
+    <select name="cboComuna" id="cboComuna">
+            <option value="0">Seleccione</option>
+       {%for c in comunas %}
+            <option 
+            {% if c.id == persona.comuna.id  %}
+            {{'selected'}}
+      
+            
+            {% endif %}
+            value="{{c.id}}">{{c.nombre}}</option>
+      {% endfor %}
+    
+      </select>
+    <br>
+    <label for="cboVivienda">Tipo de Vivienda</label>
+    <select name="cboVivienda" id="cboVivienda">
+            <option value="0">Seleccione</option>
+       {%for v in viviendas %}
+            <option 
+            {% if v.id == persona.vivienda.id %}
+                {{'selected'}}
+            
+            {% endif %}
+             value="{{v.id}}">{{v.nombre}}</option>
+      {% endfor %}
+          
+         
+    
+    
+          </select>
+    <br>
+
+    <input type="submit" value="Modificiar" id="Btnboton" >
+
+ </form>
+<h3>{{mensaje}}</h3>
+{% endblock contenido %}
+

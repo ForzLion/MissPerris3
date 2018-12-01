@@ -1,0 +1,66 @@
+{% extends "core/base.html" %}
+{% block contenido %}
+<form action=""  name="formulario_mascota" id="formulario_mascota" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    <label for="txtChip">Numero Chip</label>
+    <input type="text" name="txtChip" id="txtChip" placeholder="Ingrese Numero de Chip" min="0" onkeyup="this.value=Numeros(this.value)" pattern="^[0 - 9]+){9}$">
+    <br>
+
+    <label for="txtNombreM">Nombre Mascota</label>
+    <input type="text" name="txtNombreM" id="txtNombreM" placeholder="Ingrese Nombre de la Mascota" onkeyup="this.value=letras(this.value)"  pattern="[A-Za-z]+" maxlength="100">
+    <br>
+    <label for="cboRaza">Raza</label>
+    <select name="cboRaza" id="cboRaza" >
+            <option value="0">Seleccione</option>
+        {%for r in razas %}
+        
+        <option value="{{r.id}}">{{r.nombre}}</option>
+        {% endfor %}
+    </select>
+   <br>
+   <label for="cboSexo">Sexo</label>
+   <select name="cboSexo" id="cboSexo" >
+           <option value="0">Seleccione</option>
+       {%for s in sexos %}
+       
+       <option value="{{s.id}}">{{s.nombre}}</option>
+       {% endfor %}
+   </select>
+   
+ 
+    <br>
+     <label for="txtFechaI">Fecha de Ingreso</label>
+    <input type="date" name="txtFechIM" id="txtFechaI" >
+    <br>
+    <label for="txtFechaNM">Fecha de Nacimiento</label>
+    <input type="date" name="txtFechaNM" id="txtFechaNM" >
+    <br>
+
+    <label for="txtDescripcion">Descripcion</label>
+    <input type="text"  name="txtDescripcion" id="txtDescripcion" placeholder="Breve descripcion "    onkeyup="this.value=letras(this.value)"  pattern="[A-Za-z]+" maxlength="100" >
+    <br>
+    <label for="imgMascota">Imagen de la mascota</label>
+    <input type="file" name="imgMascota" id="imgMascota">  
+
+
+
+    <br>
+    <label for="cboEstado">Estado</label>
+    <select name="cboEstado" id="CboEstado">
+            <option value="0">Seleccione</option>
+        {%for e in estados %}
+            
+            <option value="{{e.id}}">{{e.nombre}}</option>
+         {% endfor %}
+    </select>
+
+
+
+    <input type="submit" value="Enviar" id="Btnboton" >
+
+ </form>
+
+<h3 >{{message}}</h3>
+
+{% endblock contenido %}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+{% load pwa %}
+<head>
+<!--Se carga el service worker-->
+    {% progressive_web_app_meta %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mis Perris</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script src="{% static 'core/js/inicializacion.js' %}" ></script>
+    <script src="{% static 'core/js/validacion.js' %}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+</head>
+
+<header>
+        <img src="{% static 'core/img/logo.png' %}" alt="" class="logo">
+        <ul class="navegacion" >
+        
+        <li><a href="{% url 'home' %}">inicio</a></li>
+              
+        <li><a href="{% url 'galeria' %}">Galeria</a></li>
+        {% if request.user.is_authenticated %}
+        
+        <li><a href="{% url 'listarP' %}">Personas</a></li>
+        <li><a href="{% url 'listarM' %}">Mascotas</a></li>
+        <li><a href="{% url 'formulario' %}">Formulario Persona</a></li>
+        <li><a href="{% url 'formulario_mascota' %}">Formulario Mascota</a></li>
+        <li><a href="{% url 'logout' %}">Cerrar sesion</a></li>
+        <li>
+               <a href="">{{ request.user.first_name }}</a>
+           </li>
+        
+        {% else %}
+              
+        
+        <li><a href="{% url 'login' %}">Login</a></li>
+        <li><a href="{% url 'register' %}">Registro</a></li>
+
+        {% endif %}
+
+
+
+
+    </ul>
+   
+
+</header>
+<div class="landing">
+
+        <div class="slider">
+            <div><img src="{% static 'core/img/Apolo.jpg' %}" title="apolo era divertido y por eso lo adopte" alt="" class="perro_landing"></div>
+            <div><img src="{% static 'core/img/Duque.jpg' %}" title="duque me saco de la depresion y gracias a el soy feliz" alt="" class="perro_landing"></div>
+            <div> <img src="{% static 'core/img/Tom.jpg'  %}" title="mi hijo queria un hermanito asi que le compre un perrito" alt="" class="perro_landing"></div>
+       </div>
+
+       <div class="landing_inferior">
+            
+        
+            <h1 class="color_blanco centrar_texto">+56 9 98765431</h1>
+            <h1 class="color_blanco centrar_texto">rescate y adopcion de perros callejeros</h1>
+            <ul class="social">
+                <li>
+                    <a href="http://twitter.com">
+                        <img src="{% static 'core/img/social-twitter.png' %}" alt="twitter">
+                    </a>
+                </li>
+                <li>
+                        <a href="http://facebook.com">
+                    <img src="{% static 'core/img/socialfacebook.png' %}" alt="facebook">
+                </a>
+                </li>
+                <li>
+                        <a href="http://instagram.com">
+                    <img src="{% static 'core/img/social-inst.png' %}" alt="instagram">
+                </a>
+                </li>
+                <li>
+                        <a href="http://gmail.com">
+                        <img class="social" src="{% static 'core/img/mail.png'%}" alt="Correo">
+                    </a>
+                </li>
+              
+            </ul>
+        </div>
+
+                   
+                
+
+       
+    </div>
+
+    </div>
+</div>
+<body>
+
+    <div class="contenido">
+        {% block contenido %}
+        
+        {% endblock contenido %}
+
+
+    </div>
+
+    <footer>Desarrolo web y mobile</footer>
+
+
+</body>
+
+
+</html>

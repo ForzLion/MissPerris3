@@ -1,0 +1,42 @@
+{% extends "core/base.html" %}
+{%load static%}
+{% block contenido %}
+
+<div class="contenido1">
+    <h1>Rescate</h1>
+    <p>Etapa uno</p>
+    <br>
+    <p class="linea">_____</p>
+    <br>
+    <br>
+
+    <p class="textInfo">Rescatamos perros en situacion de peligro y/o abandono. Los rehabilitamos y los
+        preparamos
+        para buscarles un hogar.
+    </p>
+
+    <img src="{% static 'core/img/rescate.jpg' %}" alt="perro rescate">
+
+</div>
+<div class="contenido2">
+    <img src="{% static 'core/img/crowfunding.jpg' %}" alt="crowfunding">
+    <h1>Crowdfunding</h1>
+    <p>financiamiento</p>
+    <p class="linea">________</p>
+    <br>
+    <br>
+
+    <br>
+
+    <p>Sigue nuestrar redes sociales para informarte acerca de las diversas campañas y actividades
+        que realizamos para obtener financiamiento para seguir ayudando.
+    </p>
+    <br>
+    <br>
+    <button type="submit" class="btn">Campañas</button>
+</div>
+
+
+
+{% endblock contenido %}
+

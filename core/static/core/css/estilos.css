@@ -1,0 +1,308 @@
+* {
+    padding: 0;
+    margin: 0; 
+}
+
+header{
+    background-color:rgb(133, 212,183);
+}
+
+.bx-wrapper {
+    background-color:rgb(133, 212, 183)!important;
+    border:none!important;
+    box-shadow: none!important;
+    
+  
+}
+
+.navegacion{
+    float: right;
+    margin-top: 30px;
+    margin-right: 40%; 
+}
+.logo {
+    width: 180px;
+    height: 60px;
+   
+    margin-top:10px;
+    margin-left:10px;
+}
+
+
+.landing{
+   
+ 
+        width: 100%;
+        height: 520px;
+       
+    
+}
+.perro_landing{
+
+        width: 900px;
+        height: 400px;
+        margin:auto;
+        display: block;
+    
+   
+}
+.landing_inferior {
+    display: flex;
+    justify-content: space-between;
+    background-color:rgb(133, 212, 183)!important;
+}
+
+.centrar_texto {
+    text-align: center;
+}
+
+.color_blanco {
+    color:white;
+}
+
+
+.social {
+    float:right;
+}
+
+.social li {
+    display:inline-block;
+    margin-right: 25px;
+}
+
+.social li img {
+    width: 50px;
+    height: 50px;
+    transition: all 1s;
+}
+
+
+.social li img:hover {
+    width: 100px;
+    height: 100px;
+    
+}
+
+
+
+
+.social img{
+    width: 5%;
+    
+}
+
+.navegacion li{
+    display: inline-block;
+    text-align: center;
+    transition: border-radius 0.5s;
+    text-align: center;
+    }
+    
+.navegacion a{
+    color:white;
+    font-weight: bold;
+    margin: 5px;
+    }
+
+
+
+
+.contenido >div{
+  width: 50%;
+}
+
+ .contenido{
+    display: flex;
+  
+    justify-content: space-around;
+   
+}
+
+.contenido img
+{
+    width: 300px;
+    margin-top: 30px;
+}
+.contenido1
+{
+    
+    text-align: right;
+    margin: 30px;
+    
+}
+.contenido1 hr
+{
+
+    float: right;
+    width: 30px;
+    margin-top:20px; 
+    margin-bottom: 30px;
+    color: black
+    
+}
+.contenido2 hr
+{
+
+    float: left;
+    width: 30px;
+    margin-top:20px; 
+    margin-bottom: 30px;
+    color: black
+    
+}
+
+.linea
+{
+  font-size: 30px;
+}
+    .btn
+    {
+      border: 4px solid #000000;
+      color: #000;
+      font-weight:bold;
+      font-size: 18px;
+      background-color: #ffff;
+      padding: 1%;
+      margin-bottom:5%;
+      margin-left: 5%;
+      cursor: pointer;
+    }
+    footer
+{
+    padding: 2%;
+    margin-top: 50px;
+    text-align:  left;
+    background-color:gray;
+}
+.galeria{
+    display: block;
+    flex-direction: row;
+    flex: wrap;
+    background-color: #85D4B7;
+    
+  }
+  .galeria img{
+    flex: wrap; 
+    width: 100x;
+    height: 150px;
+    margin-top: 10px;
+    
+  
+  }  
+
+
+  form{
+width: 25%;
+border: 1px solid #85D4B7;
+margin: 100px auto;
+
+padding:20px; 
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+box-shadow:inset 0 0 10px #85D4B7;
+
+
+  }
+
+ form label{
+    
+      font-size: 12px;
+      display: block;
+  }
+   form input,textarea{
+      padding: 10px;
+      margin-bottom: 12px;
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      
+  }
+  form input:focus,textarea:focus{
+
+    border: 1px solid #1668c4;
+  }
+  form  input[type="button"]{
+    margin-bottom: 0%;
+    background: #85D4B7;
+    color: #fff;
+    border: none;
+}
+form  input[type="button"]:hover{
+    background: #1668c4;
+    cursor: pointer;
+
+}
+ form  input[type="submit"]{
+      margin-bottom: 0%;
+      background: #85D4B7;
+      color: #fff;
+      border: none;
+  }
+ form  input[type="submit"]:hover{
+      background: #1668c4;
+      cursor: pointer;
+
+  }
+   form select{
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    
+   }
+   form input[type="radio"]{
+  width: 15px;
+  height: 15px;
+}
+
+#message{
+   float: center;
+}
+
+
+
+#main-container{
+    margin: 150px auto;
+    width: auto;
+}
+table{
+   background:white;
+    text-align: left;
+    border-collapse :collapse;
+    width: 100%;
+}
+th,td{
+    border: solid 1px  #85D4B7 ;
+    padding: 20px;
+    
+    
+}
+thead{
+    background:  #85D4B7;
+    border-bottom: solid 5;
+    color: white;
+}
+
+tr:nth-child(even){
+    background: #ddd;
+}
+tr:hover td{
+    backface-visibility: #369681;
+    color: #85D4B7;
+}
+.contenido3
+{
+    
+    width:600px;
+    border: 1px solid #85D4B7;
+    margin: 5px auto;
+    
+    
+    padding:20px; 
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    box-shadow:inset 0 0 10px #85D4B7;
+}

@@ -1,0 +1,62 @@
+{% extends "core/base.html" %}
+ {% block contenido %}
+ 
+
+ 
+ <table id="main-container">
+     <thead>
+        <tr>
+            <th>NUMERO CHIP</th>                    
+            <th>NOMBRE</th>
+            <th>RAZA</th>
+            <th>SEXO</th>
+            <th>FECHA DE INGRESO</th>
+            <th>FECHA DE NACIMIENTO</th>
+            <th>DESCRIPCION</th>
+            <th>Imagen</th>
+            <th>Estados</th>
+            <th>Opciones</th>
+    </tr>
+     </thead>
+     
+      {% for m in mascotas %}
+ 
+     <tr>
+         <td>{{m.chip}} </td>                
+         <td>{{m.nombre}} </td>
+         <td>{{m.raza}} </td>         
+         <td>{{m.sexo}} </td>
+         <td>{{m.fechaI}} </td>
+         <td>{{m.fechaNac}} </td>
+         <td>{{m.descripcion}} </td>
+         <td>{{m.imagen}} </td>
+         <td>{{m.estado}}</td>
+        
+         
+
+         <td>
+             
+            <a href="{% url 'eliminarM' m.id %}">Elimina</a>
+            <a href="{% url 'modificarM' m.id %}">Modifica</a>
+        </td>
+                       
+         
+     </tr>
+    
+
+     {% endfor %}
+        
+        
+    </table>
+    
+    
+    
+        {% if messages %}
+    
+            {% for p in messages %}
+            <div>{{ p}}</div>
+            {% endfor %}
+        {% endif %}
+        
+{% endblock contenido %}
+
